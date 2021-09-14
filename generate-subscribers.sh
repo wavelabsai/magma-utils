@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+TOTAL_SUBSCRIBERS=10
+
+MCC=001
+MNC=01
+KEY=00112233445566778899aabbccddeeff
+OPC=63BFA50EE6523365FF14C1F45F88737D
+SERVICE=ACTIVE
+DATA_PLAN=default
+APN=default
+
+for i in $(seq -f "%010g" ${TOTAL_SUBSCRIBERS})
+do
+  IMSI=IMSI${MCC}${MNC}${i}
+  echo ${IMSI},${IMSI},${KEY},${OPC},${SERVICE},${DATA_PLAN},${APN}
+done
